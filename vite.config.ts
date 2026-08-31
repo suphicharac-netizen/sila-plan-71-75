@@ -5,6 +5,10 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // สำหรับ GitHub Pages (project site) ต้อง serve จาก /<ชื่อ repo>/
+    // ตั้งค่า VITE_BASE_PATH ตอน build เช่น VITE_BASE_PATH=/sila-plan-app/ npm run build
+    // ถ้าไม่ตั้งค่า จะใช้ '/' เหมือนเดิม (สำหรับรันบนเครื่อง/โดเมนของตัวเอง)
+    base: process.env.VITE_BASE_PATH || '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {

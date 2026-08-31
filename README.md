@@ -1,20 +1,35 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# ระบบจัดการแผนพัฒนาท้องถิ่น (พ.ศ. 2571-2575) เทศบาลเมืองศิลา
 
-# Run and deploy your AI Studio app
+ระบบจัดการแผนพัฒนาท้องถิ่น สำหรับจัดการโครงการ อนุมัติประกาศใช้ อนุมัติงบประมาณ
+ติดตามโครงการ รายงาน ผ.01/ผ.02 และระบบผู้ใช้งาน (React + TypeScript + Vite)
 
-This contains everything you need to run your app locally.
+## รันบนเครื่องตัวเอง (Local Development)
 
-View your app in AI Studio: https://ai.studio/apps/6784e354-d9f3-481e-9cb4-0b5c55ff3498
+**สิ่งที่ต้องมี:** Node.js (แนะนำ 20 ขึ้นไป)
 
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
+1. ติดตั้ง dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. รันแอป:
    `npm run dev`
+3. เปิดเบราว์เซอร์ที่ `http://localhost:3000`
+
+**เข้าสู่ระบบทดสอบ** (ข้อมูลตัวอย่าง 4 บัญชี รหัสผ่านเดียวกันคือ `sila1234`):
+
+| อีเมล | สิทธิ์ |
+|---|---|
+| somsak.s@sila.go.th | ผู้ดูแลระบบ |
+| wipawee.r@sila.go.th | เจ้าหน้าที่บันทึกข้อมูล |
+| mayor@sila.go.th | ผู้บริหาร/ผู้อนุมัติ |
+| thawatchai.y@sila.go.th | เจ้าหน้าที่บันทึกข้อมูล |
+
+> ⚠️ ระบบยืนยันตัวตนนี้ตรวจสอบรหัสผ่านที่ฝั่ง client (เหมาะสำหรับ demo/ทดสอบ)
+> ก่อนนำไปใช้งานจริงกับข้อมูลราชการ ควรทำระบบตรวจสอบรหัสผ่านที่ฝั่ง server/
+> backend และเปลี่ยนรหัสผ่านตัวอย่างทั้งหมด
+
+## Build สำหรับ deploy
+
+`npm run build` — ไฟล์ผลลัพธ์จะอยู่ที่โฟลเดอร์ `dist/`
+
+## Deploy ขึ้น GitHub Pages
+
+ดูขั้นตอนละเอียดได้ในไฟล์ `DEPLOY_GITHUB_PAGES.md`
